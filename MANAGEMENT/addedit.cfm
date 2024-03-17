@@ -1,4 +1,4 @@
-<cftry>
+<cftry><cfdump var="#form#"/>
     <cfset addEditFunctions = createObject("addedit") />
     <cfset addEditFunctions.processForms(form)>
     <div class="row">
@@ -20,11 +20,19 @@
 <cffunction name="mainForm">
     <cfoutput>
         <form action="#cgi.script_name#?tool=addedit" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" id="isbn13" name="isbn13" class="formcontrol" value="" placeholder="Please Enter The ISBN13 of the
+                   book" />
+                   Expanding And Styling The Main Form 2
+                <label for="isbn13">ISBN 13: </label>
+                <button type="submit" class="btn btn-primary" style="width: 100%">Add Book</button>
+                </div>
             <label for="isbn13">ISBN13:</label>
             <input type="text" id="isbn13" name="isbn13" value="" placeholder="ISBN13" />
             <label for="title"> Book Title</label>
             <input type="text" id="title" name="title"  placeholder="Book Title" />
             <button typle= "submit" class="btn btn-primary"> Add Book </button>
+            
         </form>
     </cfoutput>
 </cffunction>
@@ -46,3 +54,4 @@
      </cfoutput>
     </cffunction>
    
+    
