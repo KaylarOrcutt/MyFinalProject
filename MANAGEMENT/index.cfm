@@ -22,7 +22,7 @@ ssorigin="anonymous"></script>
             
 </div>
  <div id="mainarea">
-    <cfinclude template="#tool#.cfm" />
+    <cfinclude template="addedit.cfm" />
         </div>
     </div>
 </body>
