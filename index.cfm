@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Kayla's Books</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="../includes/css/class.css" rel="stylesheet"/>
@@ -10,6 +10,7 @@
 </head>
 <body>
 <div id="wrapper" class="container">
+    <a href="sourceCode.cfm"> Check out the Source Code fr this project (Honor System) )</a>
      <cfinclude template="header.cfm" />
     <div id="horizontalnav" class="row">
      <cfinclude template="horizontalnav.cfm" />  
