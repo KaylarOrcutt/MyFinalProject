@@ -16,8 +16,11 @@ ssorigin="anonymous"></script>
 <body>
  <cfparam name="tool" default="addEdit" />
 
- <div  class="container">
- <div id="navarea"> NAV </div>
+    <div  class="container">
+        <div id="navarea"> 
+<cfinclude template="navbar.cfm"/>
+            
+</div>
  <div id="mainarea">
     <cfinclude template="#tool#.cfm" />
         </div>
