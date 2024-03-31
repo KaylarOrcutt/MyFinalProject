@@ -9,7 +9,12 @@
     <link href="../includes/css/mycss.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="wrapper" class="container">
+    
+    <cfparam name="p" default="carousel" />
+
+    <cfset bookstoreFunctions = createObject("bookstore") />
+
+    <div id="wrapper" class="container">
     <a href="sourceCode.cfm"> Check out the Source Code fr this project (Honor System) )</a>
      <cfinclude template="header.cfm" />
     <div id="horizontalnav" class="row">
@@ -23,7 +28,7 @@
                     <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
                     <button data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
                 </div>
-  <cfinclude template="carousel.cfm" />              
+  <cfinclude template="#p#.cfm" />              
 
         </section>
         <section id="left" class="col-sm-3 order-first">
