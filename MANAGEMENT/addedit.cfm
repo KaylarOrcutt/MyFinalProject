@@ -7,7 +7,9 @@
 
     <div class="row">
         <div id="main" class="col-9">
-            <cfoutput>#mainForm()#</cfoutput>
+            <cfif book.len() gt 0>
+                <cfoutput>#mainForm()#</cfoutput>
+            </cfif>
         </div>
 
         <div id="leftgutter" class= "col-lg-3 order-first">
@@ -30,7 +32,7 @@
     <cfset var bookDetails = addEditFunctions.bookDetails( book ) />
     
     <cfoutput>
-        <form action="#cgi.SCRIPT_NAME#?tool=addedit" method="post">
+        <form action="#cgi.SCRIPT_NAME#?tool=addedit&book=#book#&qterm=#qterm#" method="post" entype="multipart/form-data">
             <div class="form-floating mb-3">
                 <input type="text" id="isbn13" name="isbn13" value="#bookDetails.isbn13[1]#" placeholder="ISBN13" class="form-control" style="width:250px"/>
                 <label for="isbn13">ISBN13:</label>
@@ -95,32 +97,27 @@
 </cffunction>
 
 <cffunction name="sideNav">
-    <cfset allBooks = addEditFunctions.sideNavBooks( qterm )/>
+    <cfset allBooks = addEditFunctions.sideNavBooks( qterm )>
         <div>
             Book List
         </div>
              <cfoutput>
                 #findBookForm()#
-            </cfoutput>
-            <cfoutput>
-                 <ul class="nav flex-column">
-                 <li class="nav-item">
-                     <a href="#cgi.script_name#?tool=addedit&book=new" class="nav-link">
-                         New Book
-                    </a>
-                </li>
-        <cfif qterm.len() ==0>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cgi.script_name#?tool=addedit&book=new">New Book</a>
+                    </li>
+            <cfif qterm.len() ==0>
             No Search Term Entered
             <cfelseif allBooks.recordcount==0>
-            No Results Found
-            Adding Search To Our Management Page 5
+            No Results Found.
             <cfelse>
-    <cfloop query="allBooks">
+            <cfloop query="allBooks">
                 <li class="nav-item">
-                    <a href="#cgi.script_name#?tool=addedit&book=#isbn13#" class="nav-link">#trim(title)#</a>
+                    <a href="#cgi.script_name#?tool=addedit&book=#isbn13#" class="nav-link">#trim(title)#></a>
                 </li>
-    </cfloop>
-        </cfif>
+            </cfloop>
+            </cfif>
                 </ul>
              </cfoutput>
    </cffunction>

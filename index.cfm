@@ -9,8 +9,8 @@
     <link href="../includes/css/mycss.css" rel="stylesheet"/>
 </head>
 <body>
-    
     <cfparam name="p" default="carousel" />
+    <cfinclude template="stateInfo.cfm" />
 
     <cfset bookstoreFunctions = createObject("bookstore") />
 

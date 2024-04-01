@@ -21,7 +21,7 @@
         <h2>Search Results</h2>
         <div class="row">
              <div class="col-6>"
-                <img src="images/#bookinfo.image[1]#" style="widtch:100px" />
+                <img src="images/#bookinfo.image[1]#" style="widtch:100px"/>
              </div>
         <div class="co-6">
                Title #bookinfo.title[1]# <br/>
